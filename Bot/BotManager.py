@@ -5,7 +5,6 @@ bot = Client("PirieBot")
 
 
 def main_menu(client, update):
-    # Create the inline keyboard markup
     keyboard = [
         [
             InlineKeyboardButton("Áreas", callback_data="area_menu")
@@ -15,7 +14,6 @@ def main_menu(client, update):
         ]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    # Send the message with the inline keyboard markup
     client.send_message(chat_id=update.from_user.id, text="Menú principal", reply_markup=reply_markup)
 
 
