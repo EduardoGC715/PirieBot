@@ -1,7 +1,9 @@
+from Database import DBManager
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
 bot = Client("PirieBot")
+db = DBManager()
 
 
 def main_menu(client, update):
