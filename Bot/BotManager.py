@@ -1,7 +1,10 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from Database.DBManager import DBManager
+
 
 bot = Client("PirieBot")
+db = DBManager
 
 
 def main_menu(client, update):
@@ -55,6 +58,8 @@ def open_menu_handler(client, update):
 def talk(client, update):
     if update.text.lower() == "hola":
         update.reply(update.text)
+
+
 
 
 bot.run()
