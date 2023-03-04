@@ -1,4 +1,4 @@
-from Database import DBManager
+from Database.DBManager import DBManager
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 
@@ -21,23 +21,32 @@ def main_menu(client, update):
 
 def area_menu(client, update):
     # Create the inline keyboard markup
-    keyboard = [[InlineKeyboardButton("Atrás", callback_data="main_menu")]]
+    keyboard = [
+        [
+            InlineKeyboardButton("Atrás", callback_data="main_menu")
+        ],
+        [
+            InlineKeyboardButton("Arte y Salud", callback_data="arte_salud")
+        ],
+        [
+            InlineKeyboardButton("Artes Escénicas", callback_data="artes_escenicas")
+        ]
+    ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     # Send the message with the inline keyboard markup
     client.send_message(chat_id=update.from_user.id, text="Áreas", reply_markup=reply_markup)
 
 
 def teacher_menu(client, update):
-    # Create the inline keyboard markup
     keyboard = [[InlineKeyboardButton("Atrás", callback_data="main_menu")]]
     reply_markup = InlineKeyboardMarkup(keyboard)
-    # Send the message with the inline keyboard markup
     client.send_message(chat_id=update.from_user.id, text="Profesores", reply_markup=reply_markup)
 
 
 @bot.on_callback_query()
 def callback_handler(client: Client, callback_query: CallbackQuery):
     # Check the callback data and call the corresponding function
+    # menus
     if callback_query.data == "area_menu":
         area_menu(client, callback_query)
 
@@ -46,6 +55,11 @@ def callback_handler(client: Client, callback_query: CallbackQuery):
 
     elif callback_query.data == "main_menu":
         main_menu(client, callback_query)
+
+    # areas
+    elif callback_query.data == "arte_salud":
+        db.select_area(8)
+    # profesores
 
 
 @bot.on_message(filters.command("menu"))
