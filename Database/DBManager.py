@@ -1,10 +1,14 @@
 import openpyxl
+import os
 
 
 class DBManager:
     def __init__(self):
         # opening the workbook with the data
-        self.wb = openpyxl.load_workbook('../Database/Data/database.xlsx', read_only=True)
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        # navigate to the data directory and open the file
+        file_path = os.path.join(current_dir, "Data/database.xlsx")
+        self.wb = openpyxl.load_workbook(file_path, read_only=True)
 
     def style_row(self, t_row, t_type):
         sms = "Area: "
@@ -14,7 +18,7 @@ class DBManager:
             print(sms)
 
     def select(self, t_method, t_code, t_ws):
-        itr = 1
+        itr = 0
         ws = self.wb[t_ws]
         button_dict = {}
 

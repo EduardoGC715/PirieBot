@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, CallbackQuery, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, CallbackQuery
 
 from Database.DBManager import DBManager
 
@@ -29,10 +29,11 @@ def menu(client, update, t_kbsize):
     reply_markup = InlineKeyboardMarkup(keyboard)
     client.send_message(chat_id=update.from_user.id, text=data[2], reply_markup=reply_markup)
 
+
 @bot.on_callback_query()
 def callback_handler(client: Client, callback_query: CallbackQuery):
     # Check the callback data and call the corresponding function
-    menu(client, callback_query, 3)
+    menu(client, callback_query, 2)
 
 
 @bot.on_message(filters.command("menu"))
