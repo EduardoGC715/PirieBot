@@ -42,9 +42,15 @@ def open_menu_handler(client, update):
 
 
 @bot.on_message(filters.text & filters.private)
+def prof1(client, update):
+    if update.text.lower() == "Gloriana Quiros":
+        update.data = "tcourses 1 courses"
+        menu(client, update, 2)
+
+
+@bot.on_message(filters.text & filters.private)
 def talk(client, update):
     if update.text.lower() == "hola":
         update.reply(update.text)
-
 
 bot.run()

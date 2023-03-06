@@ -4,7 +4,7 @@ import os
 
 class DBManager:
     def __init__(self):
-        # opening the workbook with the data
+        # opens the workbook with the data
         current_dir = os.path.dirname(os.path.abspath(__file__))
         # navigate to the data directory and open the file
         file_path = os.path.join(current_dir, "Data/database.xlsx")
