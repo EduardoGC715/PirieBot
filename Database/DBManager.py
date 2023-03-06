@@ -10,12 +10,11 @@ class DBManager:
         file_path = os.path.join(current_dir, "Data/database.xlsx")
         self.wb = openpyxl.load_workbook(file_path, read_only=True)
 
-    def style_row(self, t_row, t_type):
-        sms = "Area: "
-        if t_type == ("acourses" or "tcourses"):
-            # (10, 3, 'creciendo con el arte 1', None)
-            sms += str(self.wb["areas"]["A" + str(t_row[1])].value)
-            print(sms)
+    def style_row(self, t_row):
+        sms = ""
+        # (10, 3, 'creciendo con el arte 1', None)
+        sms += str(self.wb["areas"]["A" + str(t_row[1])].value)
+        print(sms)
 
     def select(self, t_method, t_code, t_ws):
         itr = 0
