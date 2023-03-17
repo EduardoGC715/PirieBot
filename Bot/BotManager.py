@@ -12,13 +12,13 @@ database = DBManager()
 aux_buttons = {
     "main": ["Menú Principal", {
         "Consultas de Cursos": "menu queries"
-        }
-    ],
+    }
+             ],
     "queries": ["Menú de Consultas", {
         "Áreas": "areas 0 Áreas",
         "Profesores": "teachers 0 Profesores"
-        }
-    ]
+    }
+                ]
 }
 
 
@@ -26,13 +26,21 @@ def menu(client, update, t_kbsize, t_data):
     if t_data[0] == "menu":
         buttons = buttons_factory.create_buttons(aux_buttons[t_data[1]][1])
         title = aux_buttons[t_data[1]][0]
+        keyboard = keyboards_factory.create_keyboard(buttons, t_kbsize)
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        client.send_message(chat_id=update.from_user.id, text=title, reply_markup=reply_markup)
     else:
         query = database.select(t_data[0], t_data[1], t_data[2])
-        buttons = buttons_factory.create_buttons(query[1])
-        title = query[0]
-    keyboard = keyboards_factory.create_keyboard(buttons, t_kbsize)
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    client.send_message(chat_id=update.from_user.id, text=title, reply_markup=reply_markup)
+        if isinstance(query, str):
+            title = query
+            client.send_message(chat_id=update.from_user.id, text=title)
+        else:
+            buttons = buttons_factory.create_buttons(query[1])
+            title = query[0]
+            keyboard = keyboards_factory.create_keyboard(buttons, t_kbsize)
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            client.send_message(chat_id=update.from_user.id, text=title, reply_markup=reply_markup)
+
 
 
 @bot.on_callback_query()
@@ -44,7 +52,7 @@ def callback_handler(client: Client, callback_query: CallbackQuery):
 
 @bot.on_message(filters.command("menu"))
 def open_menu_handler(client, update):
-    # can add more funtions to new buttons here
+    # can add more functions to new buttons here
     menu(client, update, 2, ["menu", "main"])
 
 

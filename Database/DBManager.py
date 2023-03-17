@@ -56,9 +56,7 @@ class DBManager:
             for row in ws.values:
                 if t_code == str(row[0]):
                     itr += 1
-                    text += self.style_row(row, itr)
             return text
-
 
         to_return = [text, button_dict]
         return to_return
