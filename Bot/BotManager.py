@@ -34,13 +34,13 @@ def menu(client, update, t_kbsize, t_data):
         if isinstance(query, str):
             title = query
             client.send_message(chat_id=update.from_user.id, text=title)
+            client.send_message(chat_id=update.from_user.id, text=title)
         else:
             buttons = buttons_factory.create_buttons(query[1])
             title = query[0]
             keyboard = keyboards_factory.create_keyboard(buttons, t_kbsize)
             reply_markup = InlineKeyboardMarkup(keyboard)
             client.send_message(chat_id=update.from_user.id, text=title, reply_markup=reply_markup)
-
 
 
 @bot.on_callback_query()
