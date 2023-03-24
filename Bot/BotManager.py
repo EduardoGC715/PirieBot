@@ -34,7 +34,6 @@ def menu(client, update, t_kbsize, t_data):
         if isinstance(query, str):
             title = query
             client.send_message(chat_id=update.from_user.id, text=title)
-            client.send_message(chat_id=update.from_user.id, text=title)
         else:
             buttons = buttons_factory.create_buttons(query[1])
             title = query[0]

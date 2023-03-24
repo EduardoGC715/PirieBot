@@ -39,23 +39,28 @@ class DBManager:
         elif t_method == "acourses":
             text = str(self.wb["Áreas"]["A" + t_code].value)
             for row in ws.values:
+                itr += 1
                 if t_code == str(row[1]):
-                    itr += 1
                     button_dict[str(row[2])] = "groups " + str(itr) + " Grupos"
 
         elif t_method == "tcourses":
             text = str(self.wb["Profesores"]["B" + t_code].value)
             for row in ws.values:
+                itr += 1
                 if t_code == str(row[0]):
-                    itr += 1
                     button_dict[str(row[2])] = "groups " + str(itr) + " Grupos"
 
         elif t_method == "groups":
-            text = str(self.wb["Cursos"]["C" + t_code].value)
+            text = ""
             button_dict[0] = 0
             for row in ws.values:
-                if t_code == str(row[0]):
-                    itr += 1
+                itr += 1
+                if t_code == str(row[0]):  # and available
+                    print(row)
+                    text = (text + "\nModalidad: " + str(row[1]) + "\nPrecio: " + str(row[2]) + "\nHorario: " +
+                            str(row[3]) + "\nRequisitos: " + str(row[4]) + "\nDuración: " + str(row[5]) + "\n"
+                            )
+
             return text
 
         to_return = [text, button_dict]
