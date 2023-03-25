@@ -51,14 +51,14 @@ class DBManager:
                     button_dict[str(row[2])] = "groups " + str(itr) + " Grupos"
 
         elif t_method == "groups":
-            text = ""
+            text = str(self.wb["Cursos"]["C" + t_code].value) + "\nGrupos disponibles:\n"
             button_dict[0] = 0
             for row in ws.values:
                 itr += 1
-                if t_code == str(row[0]):  # and available
-                    print(row)
+                if t_code == str(row[0]) and row[7] == 1:
                     text = (text + "\nModalidad: " + str(row[1]) + "\nPrecio: " + str(row[2]) + "\nHorario: " +
-                            str(row[3]) + "\nRequisitos: " + str(row[4]) + "\nDuración: " + str(row[5]) + "\n"
+                            str(row[3]) + "\nRequisitos: " + str(row[4]) + "\nDuración: " + str(row[5]) +
+                            "\nAula: " + str(row[6]) + "\n"
                             )
 
             return text
