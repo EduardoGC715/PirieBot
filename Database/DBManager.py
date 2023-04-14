@@ -65,7 +65,11 @@ class DBManager:
                     button_dict[str(row[2])] = "groups " + str(itr) + " Grupos"
 
         elif t_menu == "groups":
-            text = str(self.wb["Cursos"]["C" + t_code].value) + "\nGrupos disponibles:\n"
+            text = (str(self.wb["Cursos"]["C" + t_code].value) + "\n\n" +
+                    str(self.wb["Cursos"]["E" + t_code].value) + "\n\n" +
+                    str(self.wb["Cursos"]["D" + t_code].value) + "\n\n" +
+                    "Grupos disponibles:\n "
+                    )
             button_dict[0] = 0
             for row in ws.values:
                 itr += 1
