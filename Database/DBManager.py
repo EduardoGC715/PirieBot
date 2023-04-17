@@ -46,7 +46,7 @@ class DBManager:
             text = "Profesores"
             for row in ws.values:
                 itr += 1
-                if itr > 19:
+                if itr > 20:
                     break
                 button_dict[str(row[1])] = "teacher_courses " + str(itr) + " Cursos"
 
@@ -54,7 +54,7 @@ class DBManager:
             text = str(self.wb["Áreas"]["A" + t_code].value)
             for row in ws.values:
                 itr += 1
-                if t_code == str(row[1]):
+                if t_code == str(row[1]) and row[5] == 1:
                     button_dict[str(row[2])] = "groups " + str(itr) + " Grupos"
 
         elif t_menu == "teacher_courses":
