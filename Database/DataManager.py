@@ -4,35 +4,54 @@ import json
 class DataManager:
     def __init__(self):
         with open('Data/data.json', 'r') as data_file:
-            # Load the JSON data
             self.data = json.load(data_file)
 
-    def refresh_data(self):
+    def reload_data(self):
         with open('Data/data.json', 'r') as data_file:
-            # Load the JSON data
             self.data = json.load(data_file)
 
     def get_areas(self):
         areas = self.data["areas"]
+        result = []
         for area in areas:
-            print([area, areas[area]])
+            result.append(areas[area])
+        return result
+
+    def get_teacher(self, t_teacher):
+        teachers = self.data["teachers"]
+        return teachers[t_teacher]
 
     def get_teachers(self):
         teachers = self.data["teachers"]
+        result = []
         for teacher in teachers:
-            print([teacher, teachers[teacher]])
+            result.append(teachers[teacher])
+        return result
 
     def get_teachers_per_area(self, t_area):
         teachers_list = self.data["areas"][t_area][1]
         teachers = self.data["teachers"]
         for teacher in teachers_list:
-                print([teacher, teachers[teacher]])
+            print([teacher, teachers[teacher]])
 
+    def get_course(self, t_course):
+        courses = self.data["courses"]
+        return courses[t_course]
 
-dm = DataManager()
-dm.get_areas()
-print("")
-dm.get_teachers()
-print("")
-dm.get_teachers_per_area("AMU")
-print("")
+    def get_courses_per_area(self, t_area):
+        courses_list = self.data["areas"][t_area][2]
+        courses = self.data["courses"]
+        for course in courses_list:
+            print([course, courses[course]])
+
+    def get_courses_per_teachers(self, t_teacher):
+        courses_list = self.data["teachers"][t_teacher][1]
+        courses = self.data["courses"]
+        result = []
+        for course in courses_list:
+            result.append(courses[course])
+        return result
+
+    def get_groups_per_course(self, t_course):
+        groups = self.data["groups"][t_course]
+        print(groups)
