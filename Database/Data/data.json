@@ -1,11 +1,11 @@
 {
   "areas": {
-    "AMA": ["Artes Manuales", ["AG"], ["AG QP","AG BO"]],
-    "AES": ["Artes Escénicas", ["GQ", "SC", "LV", "NM", "CB"], []],
-    "AMU": ["Artes Musicales", ["FC", "AM", "EC", "PA"], []],
-    "AVI": ["Artes Visuales", ["AS", "Fl", "WA", "PQ", "LS", "GM"], []],
-    "ASA": ["Arte y Salud" , ["NM", "PA", "ED"], ["PA NI"]],
-    "CAP": ["Capacitación", ["GF","DR"], ["DR LI","DR LII","DR LV"]]
+    "AMA": ["Artes Manuales", ["AG QP","AG BO"]],
+    "AES": ["Artes Escénicas", []],
+    "AMU": ["Artes Musicales", []],
+    "AVI": ["Artes Visuales", []],
+    "ASA": ["Arte y Salud" , ["PA NI"]],
+    "CAP": ["Capacitación", ["DR LI","DR LII","DR LV"]]
   },
   "teachers": {
     "AG": ["Ana Guillén", ["AG QP","AG BO"]],

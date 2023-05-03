@@ -3,11 +3,11 @@ import json
 
 class DataManager:
     def __init__(self):
-        with open('Data/data.json', 'r') as data_file:
+        with open('../Database/Data/data.json', 'r') as data_file:
             self.data = json.load(data_file)
 
     def reload_data(self):
-        with open('Data/data.json', 'r') as data_file:
+        with open('../Database/Data/data.json', 'r') as data_file:
             self.data = json.load(data_file)
 
     def get_areas(self):
@@ -28,21 +28,17 @@ class DataManager:
             result.append(teachers[teacher])
         return result
 
-    def get_teachers_per_area(self, t_area):
-        teachers_list = self.data["areas"][t_area][1]
-        teachers = self.data["teachers"]
-        for teacher in teachers_list:
-            print([teacher, teachers[teacher]])
-
     def get_course(self, t_course):
         courses = self.data["courses"]
         return courses[t_course]
 
     def get_courses_per_area(self, t_area):
-        courses_list = self.data["areas"][t_area][2]
+        courses_list = self.data["areas"][t_area][1]
         courses = self.data["courses"]
+        result = []
         for course in courses_list:
-            print([course, courses[course]])
+            result.append(courses[course])
+        return result
 
     def get_courses_per_teachers(self, t_teacher):
         courses_list = self.data["teachers"][t_teacher][1]
