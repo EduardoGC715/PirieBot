@@ -9,17 +9,24 @@ class MessageManager:
         self.dm = DataManager()
         self.patterns = [
             # patterns for areas
-            (r'\bArtes\sMusicales\b', self.dm.get_courses_per_area("AMU")),
-            (r'\bArtes\sManuales\b', self.dm.get_courses_per_area("AMA")),
-            (r'\bArtes\sVisuales\b', self.dm.get_courses_per_area("AVI")),
-            (r'\bArte\sy\sSalud\b', self.dm.get_courses_per_area("ASA")),
-            (r'\bCapacitaci[oó]n\b', self.dm.get_courses_per_area("CAP")),
-            (r'\bArtes\sEsc[eé]nicas\b', self.dm.get_courses_per_area("AES")),
+            (r'\bArtes\sMusicales\b', "AMU"),
+            (r'\bArtes\sManuales\b', "AMA"),
+            (r'\bArtes\sVisuales\b', "AVI"),
+            (r'\bArte\sy\sSalud\b', "ASA"),
+            (r'\bCapacitaci[oó]n\b', "CAP"),
+            (r'\bArtes\sEsc[eé]nicas\b', "AES"),
             # patterns for teachers
-            (r'\bGloriana\sQuir[oó]s\b', self.dm.get_teacher("GQ")),
-            (r'\bDavid\sRodr[ií]guez\b', self.dm.get_teacher("DR")),
-            (r'\bAna\sGuill[eé]n\b', self.dm.get_teacher("AG")),
-            (r'\bPamela\sAlvarado\b', self.dm.get_teacher("PA")),
+            (r'\bGloriana\sQuir[oó]s\b', "GQ"),
+            (r'\bDavid\sRodr[ií]guez\b', "DR"),
+            (r'\bAna\sGuill[eé]n\b', "AG"),
+            (r'\bPamela\sAlvarado\b', "PA"),
+            # patterns for courses
+            (r"Quilting|Quilting\sPrincipiantes", "QP"),
+            (r'Lesco\s[I1]', "LI"),
+            (r'Lesco\s(?:II|2)', "LII"),
+            (r'Lesco\s[V5]', "LV"),
+
+
         ]
 
     def regex_match(self):
