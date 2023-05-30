@@ -1,0 +1,281 @@
+{
+  "areas": {
+    "AMA": ["Artes Manuales", ["AG QP","AG BO"]],
+    "AES": ["Artes Escénicas", []],
+    "AMU": ["Artes Musicales", []],
+    "AVI": ["Artes Visuales", []],
+    "ASA": ["Arte y Salud" , ["PA NI"]],
+    "CAP": ["Capacitación", ["DR LI","DR LII","DR LV"]]
+  },
+  "teachers": {
+    "AG": ["Ana Guillén", ["AG QP","AG BO"]],
+    "GQ": ["Gloriana Quirós", []],
+    "SC": ["Susana Castillo", []],
+    "LV": ["Lorenlaine Varela", []],
+    "NM": ["Natalia Meneses", []],
+    "CB": ["Claudia Barquero", []],
+    "FC": ["Francisco Cerdas", []],
+    "AM": ["Alejandro Mora", []],
+    "EC": ["Elena Castillo", []],
+    "PA": ["Pamela Alvarado", ["PA NI"]],
+    "AS": ["Alex Serrano", []],
+    "FL": ["Francesco Latino", []],
+    "WA": ["Wesley Acuña", []],
+    "PQ": ["Pablo Quesada", []],
+    "LS": ["Luis Solano", []],
+    "GM": ["Gerald Muñoz", []],
+    "ED": ["Ericka Duarte", []],
+    "GF": ["Gabriel Fernández", []],
+    "DR": ["David Rodríguez", ["DR LI","DR LII","DR LV"]]
+},
+  "courses": {
+    "AG QP": {
+      "name": "Quilting Principiantes",
+      "description": "En Quilting se aprende a armar, cortar, coser, armar y acolchar utilizando diferentes técnicas, a usar cuchilla y reglas. Los trabajos son realizados con telas de algodón, se pueden realizar colchas, caminos de mesa, entre otros. Según se avance en los niveles, los bloques de trabajo aumentan la dificultad y aumentan la variedad de técnicas, tales como estilo vitral, crazy quilt y otras.",
+      "recommendations": "Para los materiales los docentes prefieren hablar al respecto en la primera clase, esto con el fin de que puedan ser asesorados por el docente y que cada estudiante haga una mejor inversión de su dinero.",
+      "availability": true
+    },
+    "PA NI": {
+      "name": "Nutrición Inteligente",
+      "description": "En Nutrición Inteligente se busca fomentar hábitos alimentarios para una alimentación sostenible, dichos hábitos deben de ser saludables para promover una adecuada escogencia de alimentos y por ende mejorar la conducta alimentaria. Se incluyen temas de alimentación en diferentes grupos de edad, lectura de etiquetas, mitos alimentarios, alimentación para diferentes enfermedades, manipulación de alimentos, entre otros.\n",
+      "recommendations": "Este curso se da cada tres meses por lo que es importante que no faltes a clases o justifiques las ausencias para programar reposiciones.",
+      "availability": true
+    },
+    "AG BO": {
+      "name": "Bordado",
+      "description": "null",
+      "recommendations": "null",
+      "availability": true
+    },
+    "DR LI": {
+      "name": "LESCO I",
+      "description": "null",
+      "recommendations": "null",
+      "availability": true
+    },
+    "DR LII": {
+      "name": "LESCO II",
+      "description": "null",
+      "recommendations": "null",
+      "availability": true
+    },
+    "DR LV": {
+      "name": "LESCO V",
+      "description": "null",
+      "recommendations": "null",
+      "availability": true
+    }
+  },
+  "groups": {
+    "PA NI": [
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡18,000",
+        "schedule": "V: 5:30 pm - 6:30 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      }
+    ],
+    "AG QP": [
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "L: 2:00 pm - 3:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "M: 2:00 pm - 3:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "M: 5:00 pm - 6:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "J: 2:00 pm - 3:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "J: 5:00 pm - 6:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "V: 5:00 pm - 6:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      }
+    ],
+    "AG BO": [
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡19,350",
+        "schedule": "L: 4:00 pm - 5:50 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "5",
+        "availability": "true"
+      }
+    ],
+    "DR LI": [
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "L: 9:00 am - 12:00 md",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "K: 2:00 pm - 5:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "K: 6:00 pm - 9:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "M: 2:00 pm - 5:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "J: 9:00 am - 12:00 md",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "V: 6:00 pm - 9:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "V: 9:00 am - 12:00 md",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "S: 1:00 pm - 4:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      }
+    ],
+    "DR LII": [
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "L: 2:00 pm - 5:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      },
+      {
+        "modality": "Presencial",
+        "monthly_payment": "₡21,000",
+        "schedule": "L: 6:00 pm - 9:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "null",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "K: 9:00 am - 12:00 md",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "M: 6:00 pm - 9:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      }
+    ],
+    "DR LV": [
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "M: 9:00 am - 12:00 md",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      },
+      {
+        "modality": "Virtual",
+        "monthly_payment": "₡21,000",
+        "schedule": "V: 2:00 pm - 5:00 pm",
+        "requirements": "15 años",
+        "duration": "12 semanas",
+        "class": "Virtual",
+        "availability": "true"
+      }
+    ]
+  }
+}

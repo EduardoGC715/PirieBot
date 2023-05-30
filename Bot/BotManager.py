@@ -1,56 +1,41 @@
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, CallbackQuery
-
+from pyrogram.types import CallbackQuery
 from Database.DBManager import DBManager
 
-from IKKeyboard import IKKeyboard
-from IKButtons import IKButtons
-
 bot = Client("PirieBot")
-keyboards_factory = IKKeyboard()
-buttons_factory = IKButtons()
+
 database = DBManager()
 
 
-def main_menu(client, update):
-    buttons = buttons_factory.create_buttons(
-        {"Áreas": "areas 0 Áreas",
-         "Profesores": "teachers 0 Profesores"}
-    )
-    keyboard = keyboards_factory.create_keyboard(buttons, 3)
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    client.send_message(chat_id=update.from_user.id, text="Menú principal", reply_markup=reply_markup)
-
-
-def menu(client, update, t_kbsize):
-    data = update.data.split()
-    buttons = buttons_factory.create_buttons(database.select(data[0], data[1], data[2]))
-    keyboard = keyboards_factory.create_keyboard(buttons, t_kbsize)
-    reply_markup = InlineKeyboardMarkup(keyboard)
-    client.send_message(chat_id=update.from_user.id, text=data[2], reply_markup=reply_markup)
+def send_message(client, update, t_reply):
+    if t_reply[1] != 0:
+        client.send_message(chat_id=update.from_user.id, text=t_reply[0], reply_markup=t_reply[1])
+    else:
+        client.send_message(chat_id=update.from_user.id, text=t_reply[0])
 
 
 @bot.on_callback_query()
 def callback_handler(client: Client, callback_query: CallbackQuery):
-    # Check the callback data and call the corresponding function
-    menu(client, callback_query, 2)
+    # Check the callback data and send it to the DBManager
+    data = callback_query.data.split()
+    reply = database.reply_maker(data)
+    send_message(client, callback_query, reply)
 
 
 @bot.on_message(filters.command("menu"))
 def open_menu_handler(client, update):
-    main_menu(client, update)
+    # Check command and send it to the DBManager
+    reply = database.reply_maker(["main", "0", "None"])
+    send_message(client, update, reply)
 
 
 @bot.on_message(filters.text & filters.private)
-def prof1(client, update):
-    if update.text.lower() == "Gloriana Quiros":
-        update.data = "tcourses 1 courses"
-        menu(client, update, 2)
+def message_handler(client, update):
+    # Check message and send it to the DBManager
+    reply = database.reply_maker(["main", "0", "None"])
+    send_message(client, update, reply)
 
 
-@bot.on_message(filters.text & filters.private)
-def talk(client, update):
-    if update.text.lower() == "hola":
-        update.reply(update.text)
-
-bot.run()
+def run_bot():
+    # function to run bot
+    bot.run()
